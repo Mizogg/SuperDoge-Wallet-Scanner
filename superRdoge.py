@@ -69,8 +69,8 @@ while True:
     urmd = HASH160(upub)                                                            # uncompressed HASH160
     dogecaddr = bit.base58.b58encode_check(b'\x1e' + crmd)                          #Dogecoin compressed
     dogeuaddr = bit.base58.b58encode_check(b'\x1e' + urmd)                          #Dogecoin uncompressed
-    count+=1*int(threadCount)
-    total+=2*int(threadCount)
+    count+=1
+    total+=2
     Dogecoin = requests.get("https://dogechain.info/api/v1/address/received/"+ str (dogecaddr)) #received or balance
     resedoge = Dogecoin.json()
     balanceDoge = dict(resedoge)['received'] #received or balance
